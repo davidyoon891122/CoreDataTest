@@ -14,6 +14,8 @@
 		AD47069C26D0A67F0092876B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD47069B26D0A67F0092876B /* Assets.xcassets */; };
 		AD47069F26D0A67F0092876B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD47069D26D0A67F0092876B /* LaunchScreen.storyboard */; };
 		AD4706AA26D0A6CE0092876B /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706A926D0A6CE0092876B /* Todo.swift */; };
+		AD4706AC26D0A9060092876B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706AB26D0A9060092876B /* TableView.swift */; };
+		AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706AD26D0A9BA0092876B /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AD47069E26D0A67F0092876B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD4706A026D0A67F0092876B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4706A926D0A6CE0092876B /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		AD4706AB26D0A9060092876B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		AD4706AD26D0A9BA0092876B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			children = (
 				AD47069826D0A67F0092876B /* Main.storyboard */,
 				AD47069D26D0A67F0092876B /* LaunchScreen.storyboard */,
+				AD4706AB26D0A9060092876B /* TableView.swift */,
+				AD4706AD26D0A9BA0092876B /* TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD47069726D0A67F0092876B /* ViewController.swift in Sources */,
+				AD4706AC26D0A9060092876B /* TableView.swift in Sources */,
 				AD47069326D0A67F0092876B /* AppDelegate.swift in Sources */,
+				AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */,
 				AD47069526D0A67F0092876B /* SceneDelegate.swift in Sources */,
 				AD4706AA26D0A6CE0092876B /* Todo.swift in Sources */,
 			);

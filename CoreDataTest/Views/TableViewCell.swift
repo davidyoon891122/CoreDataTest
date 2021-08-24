@@ -27,13 +27,15 @@ class TableViewCell: UITableViewCell{
         super.init(style: .default, reuseIdentifier: "testCell")
         self.addSubview(titleLabel)
         self.addSubview(contentLabel)
+        
+        
         titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
         
         contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
-        contentLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        contentLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
+        contentLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
         
     }
     

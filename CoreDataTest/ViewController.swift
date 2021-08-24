@@ -7,41 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "testCell")
+        //tableView.rowHeight = 70
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        return tableView
+    }()
     
-    let tableView = TableView()
+    lazy var mainView: UIView = {
+        return TableView(tableView: self.tableView)
+    }()
     
-    
-//    let textLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Test"
-//        label.textAlignment = .center
-//        label.backgroundColor = .red
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
-//
-    
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // view.addSubview(textLabel)
-        view.addSubview(tableView)
-        
-//        textLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        textLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-//        textLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-//
-//
-        //tableView.topAnchor.constraint(equalTo: textLabel.bottomAnchor).isActive = true
-        
-        
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-       
+        view.addSubview(mainView)
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        mainView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        mainView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        self.view.layoutIfNeeded()
+            
+
+
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "testCell") as! TableViewCell
+        return cell
     }
 
 

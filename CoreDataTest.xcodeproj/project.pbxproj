@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD351CD026D315D200D1EC68 /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD351CCF26D315D200D1EC68 /* TopMenuView.swift */; };
 		AD47069326D0A67F0092876B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47069226D0A67F0092876B /* AppDelegate.swift */; };
 		AD47069526D0A67F0092876B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47069426D0A67F0092876B /* SceneDelegate.swift */; };
 		AD47069726D0A67F0092876B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47069626D0A67F0092876B /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		AD4706AA26D0A6CE0092876B /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706A926D0A6CE0092876B /* Todo.swift */; };
 		AD4706AC26D0A9060092876B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706AB26D0A9060092876B /* TableView.swift */; };
 		AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706AD26D0A9BA0092876B /* TableViewCell.swift */; };
+		AD6BFC8F26D4876C005D2C1B /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BFC8E26D4876C005D2C1B /* TodoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD351CCF26D315D200D1EC68 /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
 		AD47068F26D0A67F0092876B /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD47069226D0A67F0092876B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD47069426D0A67F0092876B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		AD4706A926D0A6CE0092876B /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		AD4706AB26D0A9060092876B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		AD4706AD26D0A9BA0092876B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		AD6BFC8E26D4876C005D2C1B /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		AD47069126D0A67F0092876B /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				AD6BFC8D26D48758005D2C1B /* ViewModels */,
 				AD4706A826D0A6B90092876B /* Models */,
 				AD4706A726D0A6A20092876B /* Views */,
 				AD4706A626D0A68B0092876B /* Resources */,
@@ -88,6 +93,7 @@
 				AD47069D26D0A67F0092876B /* LaunchScreen.storyboard */,
 				AD4706AB26D0A9060092876B /* TableView.swift */,
 				AD4706AD26D0A9BA0092876B /* TableViewCell.swift */,
+				AD351CCF26D315D200D1EC68 /* TopMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +104,14 @@
 				AD4706A926D0A6CE0092876B /* Todo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AD6BFC8D26D48758005D2C1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AD6BFC8E26D4876C005D2C1B /* TodoViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,12 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6BFC8F26D4876C005D2C1B /* TodoViewModel.swift in Sources */,
 				AD47069726D0A67F0092876B /* ViewController.swift in Sources */,
 				AD4706AC26D0A9060092876B /* TableView.swift in Sources */,
 				AD47069326D0A67F0092876B /* AppDelegate.swift in Sources */,
 				AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */,
 				AD47069526D0A67F0092876B /* SceneDelegate.swift in Sources */,
 				AD4706AA26D0A6CE0092876B /* Todo.swift in Sources */,
+				AD351CD026D315D200D1EC68 /* TopMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

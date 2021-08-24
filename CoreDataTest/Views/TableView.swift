@@ -7,42 +7,53 @@
 
 import UIKit
 
-class TableView: UIView, UITableViewDelegate, UITableViewDataSource {
+class TableView: UIView {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "testCell") as! TableViewCell
-        
-        
-        return cell
-    }
-    
-    
-    let tableView: UITableView = {
-        let table = UITableView()
-        table.backgroundColor = .yellow
-        table.register(TableViewCell.self, forCellReuseIdentifier: "testCell")
-        return table
+
+    let testLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Test"
+        label.textAlignment = .center
+        label.textColor = .red
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
+    var tableView: UITableView!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    
+    init(tableView: UITableView) {
+        super.init(frame: .zero)
+        self.tableView = tableView
+        addSubviews()
         
-        tableView.delegate = self
-        tableView.dataSource = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    func addSubviews() {
+        addSubview(testLabel)
+        addSubview(tableView)
+    }
+    
+    
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        
+        testLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        testLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
+        testLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
+        
+        tableView.topAnchor.constraint(equalTo: testLabel.bottomAnchor, constant: 5).isActive = true
+        tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+
+    }
+    
     
 }

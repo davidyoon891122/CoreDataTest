@@ -23,17 +23,21 @@ class TableViewCell: UITableViewCell{
         return label
     }()
     
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: "testCell")
         self.addSubview(titleLabel)
         self.addSubview(contentLabel)
         
         
-        titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
         
-        contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        
+        
+        contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         contentLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
         contentLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
         

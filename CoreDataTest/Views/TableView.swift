@@ -19,13 +19,6 @@ class TableView: UIView {
         return label
     }()
     
-    let topMenuView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     
     var addContentView = AddContentView()
     
@@ -46,7 +39,6 @@ class TableView: UIView {
     
     func addSubviews() {
         addSubview(testLabel)
-        addSubview(topMenuView)
         addSubview(tableView)
         addSubview(addContentView)
     }
@@ -60,14 +52,10 @@ class TableView: UIView {
         testLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
         testLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
         
-//        topMenuView.topAnchor.constraint(equalTo: testLabel.bottomAnchor, constant: 5).isActive = true
-//        topMenuView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
-//        topMenuView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
-//        topMenuView.heightAnchor.constraint(equalToConstant: 146).isActive = true
         addContentView.translatesAutoresizingMaskIntoConstraints = false
         addContentView.topAnchor.constraint(equalTo: testLabel.bottomAnchor, constant: 5).isActive = true
-        addContentView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
-        addContentView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
+        addContentView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor).isActive = true
+        addContentView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
         addContentView.heightAnchor.constraint(equalToConstant: 146).isActive = true
         
         tableView.topAnchor.constraint(equalTo: addContentView.bottomAnchor, constant: 5).isActive = true

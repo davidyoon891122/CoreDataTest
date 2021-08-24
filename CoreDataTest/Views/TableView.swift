@@ -21,8 +21,7 @@ class TableView: UIView {
     
     let topMenuView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
-        //view.frame = CGRect(x: 0, y: 40, width: 50, height: 50)
+        view.backgroundColor = .gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -60,9 +59,9 @@ class TableView: UIView {
         testLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
         
         topMenuView.topAnchor.constraint(equalTo: testLabel.bottomAnchor, constant: 5).isActive = true
-        topMenuView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
-        topMenuView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
-        topMenuView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        topMenuView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
+        topMenuView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+        topMenuView.heightAnchor.constraint(equalToConstant: 146).isActive = true
         
         tableView.topAnchor.constraint(equalTo: topMenuView.bottomAnchor, constant: 5).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true

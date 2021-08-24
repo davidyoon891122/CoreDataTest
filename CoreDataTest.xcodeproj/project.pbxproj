@@ -17,6 +17,7 @@
 		AD4706AC26D0A9060092876B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706AB26D0A9060092876B /* TableView.swift */; };
 		AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4706AD26D0A9BA0092876B /* TableViewCell.swift */; };
 		AD6BFC8F26D4876C005D2C1B /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BFC8E26D4876C005D2C1B /* TodoViewModel.swift */; };
+		AD6BFCB626D515A9005D2C1B /* AddContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BFCB526D515A9005D2C1B /* AddContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AD4706AB26D0A9060092876B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		AD4706AD26D0A9BA0092876B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		AD6BFC8E26D4876C005D2C1B /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		AD6BFCB526D515A9005D2C1B /* AddContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				AD47069D26D0A67F0092876B /* LaunchScreen.storyboard */,
 				AD4706AB26D0A9060092876B /* TableView.swift */,
 				AD4706AD26D0A9BA0092876B /* TableViewCell.swift */,
+				AD6BFCB526D515A9005D2C1B /* AddContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				AD47069326D0A67F0092876B /* AppDelegate.swift in Sources */,
 				AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */,
 				AD47069526D0A67F0092876B /* SceneDelegate.swift in Sources */,
+				AD6BFCB626D515A9005D2C1B /* AddContentView.swift in Sources */,
 				AD4706AA26D0A6CE0092876B /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

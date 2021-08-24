@@ -12,8 +12,18 @@ class TodoViewModel {
     
     var todoList:[Todo]?{
         didSet{
-            print("updated list :", todoList)
+            print("updated list :", todoList);
+            if let list = todoList {
+                for todo in list {
+                    print(todo.title)
+                }
+            }
         }
+    }
+    
+    
+    init() {
+        todoList = [Todo]()
     }
     
     

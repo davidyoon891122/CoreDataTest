@@ -9,6 +9,8 @@ import UIKit
 
 class AddContentView: UIView {
 
+    var todoVM = TodoViewModel()
+    
     lazy var titletLabel:UILabel = {
         let label = UILabel()
         label.text = "Title: "
@@ -44,11 +46,22 @@ class AddContentView: UIView {
     lazy var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("ADD", for: .normal)
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = UIColor.white.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
         
+        button.addTarget(self, action:#selector(addTodo), for: .touchUpInside)
         return button
     }()
     
     
+    @objc func addTodo() {
+        
+        
+        let addedTodo = Todo(title: titletLabel.text ?? "", contents: contentLabel.text ?? "")
+        todoVM.addTodoList(todo: addedTodo);
+        
+    }
     
     
     override init(frame: CGRect) {
@@ -67,6 +80,7 @@ class AddContentView: UIView {
         self.addSubview(titleTextField)
         self.addSubview(contentLabel)
         self.addSubview(contentTextField)
+        self.addSubview(addButton)
     }
     
     
@@ -85,6 +99,10 @@ class AddContentView: UIView {
         
         contentTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 20).isActive = true
         contentTextField.leftAnchor.constraint(equalTo: contentLabel.rightAnchor, constant: 5).isActive = true
+        
+        addButton.topAnchor.constraint(equalTo: contentLabel.bottomAnchor, constant: 20).isActive = true
+        addButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 150).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
     }
 }

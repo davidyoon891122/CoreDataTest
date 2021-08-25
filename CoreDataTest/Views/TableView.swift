@@ -94,7 +94,7 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "testCell") as! TableViewCell
         cell.titleLabel.text = todoList[indexPath.row].title
-        cell.contentLabel.text = todoList[indexPath.row].title
+        cell.contentLabel.text = todoList[indexPath.row].contents
         
         return cell
     }

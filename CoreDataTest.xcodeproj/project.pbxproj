@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD426B7626D5DF1E0045B1EF /* TodoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD426B7526D5DF1E0045B1EF /* TodoProtocol.swift */; };
 		AD47069326D0A67F0092876B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47069226D0A67F0092876B /* AppDelegate.swift */; };
 		AD47069526D0A67F0092876B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47069426D0A67F0092876B /* SceneDelegate.swift */; };
 		AD47069726D0A67F0092876B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47069626D0A67F0092876B /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD426B7526D5DF1E0045B1EF /* TodoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoProtocol.swift; sourceTree = "<group>"; };
 		AD47068F26D0A67F0092876B /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD47069226D0A67F0092876B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD47069426D0A67F0092876B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD426B7426D5DF110045B1EF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AD426B7526D5DF1E0045B1EF /* TodoProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		AD47068626D0A67F0092876B = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		AD47069126D0A67F0092876B /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				AD426B7426D5DF110045B1EF /* Protocols */,
 				AD6BFC8D26D48758005D2C1B /* ViewModels */,
 				AD4706A826D0A6B90092876B /* Models */,
 				AD4706A726D0A6A20092876B /* Views */,
@@ -191,6 +202,7 @@
 				AD4706AE26D0A9BA0092876B /* TableViewCell.swift in Sources */,
 				AD47069526D0A67F0092876B /* SceneDelegate.swift in Sources */,
 				AD6BFCB626D515A9005D2C1B /* AddContentView.swift in Sources */,
+				AD426B7626D5DF1E0045B1EF /* TodoProtocol.swift in Sources */,
 				AD4706AA26D0A6CE0092876B /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

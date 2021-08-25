@@ -7,9 +7,17 @@
 
 import UIKit
 
-class TableView: UIView {
+class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtocol{
     
-
+    var todoList = [Todo]() {
+        didSet {
+            tableView.reloadData()
+            for todo in todoList {
+                print(todo.title)
+            }
+        }
+    }
+    
     let testLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
@@ -20,14 +28,26 @@ class TableView: UIView {
     }()
     
     
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "testCell")
+        tableView.rowHeight = 70
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        return tableView
+    }()
+    
+    
     var addContentView = AddContentView()
     
-    var tableView: UITableView!
     
     
-    init(tableView: UITableView) {
+    init() {
         super.init(frame: .zero)
-        self.tableView = tableView
+        
+        addContentView.delegate = self
         addSubviews()
         
     }
@@ -65,6 +85,23 @@ class TableView: UIView {
 
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return todoList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "testCell") as! TableViewCell
+        cell.titleLabel.text = todoList[indexPath.row].title
+        cell.contentLabel.text = todoList[indexPath.row].title
+        
+        return cell
+    }
+
+    func addTodo(todo: Todo) {
+        todoList.append(todo)
+    }
     
     
     

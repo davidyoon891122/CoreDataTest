@@ -10,25 +10,28 @@ import Foundation
 
 class TodoViewModel {
     
-    var todoList:[Todo]?{
+    private var todoList: [Todo] {
         didSet{
-            print("updated list :", todoList);
-            if let list = todoList {
-                for todo in list {
-                    print(todo.title)
-                }
+            for todo in todoList {
+                print(todo.title)
             }
+            
         }
     }
     
-    
-    init() {
-        todoList = [Todo]()
+    public init()
+    {
+        self.todoList = [Todo]()
     }
     
     
     func addTodoList(todo: Todo) {
-        self.todoList?.append(todo)
+        self.todoList.append(todo)
+    }
+    
+    
+    func getTodoList() -> [Todo] {
+        return self.todoList
     }
     
 }

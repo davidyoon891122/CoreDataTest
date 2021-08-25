@@ -11,6 +11,9 @@ class AddContentView: UIView {
 
     var todoVM = TodoViewModel()
     
+    weak var delegate: TodoProtocol?
+    
+    
     lazy var titletLabel:UILabel = {
         let label = UILabel()
         label.text = "Title: "
@@ -56,11 +59,10 @@ class AddContentView: UIView {
     
     
     @objc func addTodo() {
-        
-        
-        let addedTodo = Todo(title: titletLabel.text ?? "", contents: contentLabel.text ?? "")
-        todoVM.addTodoList(todo: addedTodo);
-        
+        print("clicked")
+        let addedTodo = Todo(title: titleTextField.text ?? "nil", contents: contentTextField.text ?? "nil")
+        //todoVM.addTodoList(todo: addedTodo);
+        delegate?.addTodo(todo: addedTodo)
     }
     
     

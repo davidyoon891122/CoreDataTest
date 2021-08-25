@@ -8,13 +8,9 @@
 import UIKit
 
 class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtocol{
-    
-    var todoList = [Todo]() {
-        didSet {
+    var todoVM = TodoViewModel() {
+        didSet{
             tableView.reloadData()
-            for todo in todoList {
-                print(todo.title)
-            }
         }
     }
     
@@ -46,7 +42,6 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
     
     init() {
         super.init(frame: .zero)
-        
         addContentView.delegate = self
         addSubviews()
         
@@ -88,22 +83,20 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoList.count
+        return todoVM.todoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "testCell") as! TableViewCell
-        cell.titleLabel.text = todoList[indexPath.row].title
-        cell.contentLabel.text = todoList[indexPath.row].contents
+        cell.titleLabel.text = todoVM.todoList[indexPath.row].title
+        cell.contentLabel.text = todoVM.todoList[indexPath.row].contents
         
         return cell
     }
-
-    func addTodo(todo: Todo) {
-        todoList.append(todo)
+    
+    
+    func addTodo(todoViewModel: TodoViewModel) {
+        self.todoVM = todoViewModel
     }
-    
-    
-    
     
 }

@@ -8,12 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController{
-    lazy var todoVM = TodoViewModel() {
-        didSet {
-            print("didSet VM")
-        }
-    }
-    
 
     lazy var mainView = TableView()
 

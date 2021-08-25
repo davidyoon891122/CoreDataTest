@@ -61,8 +61,8 @@ class AddContentView: UIView {
     @objc func addTodo() {
         print("clicked")
         let addedTodo = Todo(title: titleTextField.text ?? "nil", contents: contentTextField.text ?? "nil")
-        //todoVM.addTodoList(todo: addedTodo);
-        delegate?.addTodo(todo: addedTodo)
+        todoVM.addTodoList(todo: addedTodo)
+        delegate?.addTodo(todoViewModel: todoVM)
     }
     
     

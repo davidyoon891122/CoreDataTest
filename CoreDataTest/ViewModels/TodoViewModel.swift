@@ -10,21 +10,9 @@ import Foundation
 
 class TodoViewModel {
     
-    private var todoList: [Todo] {
-        didSet{
-            for todo in todoList {
-                print(todo.title)
-            }
-            
-        }
-    }
+    var todoList: [Todo] = [Todo]()
     
-    public init()
-    {
-        self.todoList = [Todo]()
-    }
-    
-    
+
     func addTodoList(todo: Todo) {
         self.todoList.append(todo)
     }

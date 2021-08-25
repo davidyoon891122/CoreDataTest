@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol TodoProtocol: AnyObject {
-    func addTodo(todo: Todo)
+    func addTodo(todoViewModel: TodoViewModel)
 }

@@ -6,19 +6,22 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController{
 
+    var container: NSPersistentContainer!
+    
     lazy var mainView = TableView()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         setLayouts()
+        
     }
     
-    
+        
     
     func addSubviews() {
         view.addSubview(mainView)

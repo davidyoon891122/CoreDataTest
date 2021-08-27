@@ -14,6 +14,10 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
         }
     }
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    private var todoLists = [TodoListItem]()
+    
     let testLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
@@ -33,6 +37,7 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
         tableView.rowHeight = 70
         tableView.estimatedRowHeight = UITableView.automaticDimension
         return tableView
+        
     }()
     
     
@@ -44,7 +49,7 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
         super.init(frame: .zero)
         addContentView.delegate = self
         addSubviews()
-        
+        getAllItem()
     }
     
     required init?(coder: NSCoder) {
@@ -83,20 +88,70 @@ class TableView: UIView, UITableViewDelegate, UITableViewDataSource, TodoProtoco
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoVM.todoList.count
+        return todoLists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "testCell") as! TableViewCell
-        cell.titleLabel.text = todoVM.todoList[indexPath.row].title
-        cell.contentLabel.text = todoVM.todoList[indexPath.row].contents
+        cell.titleLabel.text = todoLists[indexPath.row].title
+        cell.contentLabel.text = todoLists[indexPath.row].contents
         
         return cell
     }
     
     
-    func addTodo(todoViewModel: TodoViewModel) {
-        self.todoVM = todoViewModel
+    func addTodo(todo: Todo) {
+        self.creatItem(title: todo.title, contents: todo.contents)
     }
+    
+    
+    // CoreData
+    
+    func getAllItem() {
+        do{
+            todoLists = try context.fetch(TodoListItem.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func creatItem(title: String, contents: String) {
+        let newItem = TodoListItem(context: context)
+        newItem.title = title
+        newItem.contents = contents
+        
+        do {
+            try context.save()
+            getAllItem()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteItem(item: TodoListItem) {
+        context.delete(item)
+        do {
+            try context.save()
+            getAllItem()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateItem(item: TodoListItem, newTitle: String, newContents: String) {
+        item.title = newTitle
+        item.contents = newContents
+        
+        do {
+            try context.save()
+            getAllItem()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     
 }
